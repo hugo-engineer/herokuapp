@@ -11,6 +11,12 @@ var PORT = process.env.PORT || 3000;
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use((req, res, next) => {
+  res.append('Access-Control-Allow-Origin', ['*']);
+  res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.append('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
 
 // Star Wars Characters (DATA)
 // =============================================================

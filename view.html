@@ -71,7 +71,7 @@
       // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
       searchedCharacter = searchedCharacter.replace(/\s+/g, "").toLowerCase();
 
-      $.get("/api/characters/" + searchedCharacter, function(data) {
+      $.get("https://infinite-escarpment-53514.herokuapp.com/api/characters/" + searchedCharacter, function(data) {
         console.log(data);
         if (data) {
           $("#stats").show();
